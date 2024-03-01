@@ -13,17 +13,19 @@ public class OlympicsTester {
 		
 		OlympicsService service =	new OlympicsServiceImpl();
 		
-//		SportsDto dto = new SportsDto(1, "Badminton", 2, "Indoor", "Racquet");
-//		
-//		boolean result = service.validateAndAdd(dto);
-//		
-//		System.out.println(result);
+	//SportsDto dto = new SportsDto(1, "Badminton", 2, "Indoor", "Racquet");
+		
+	  // boolean result = service.validateAndAdd(dto);
+		
+		//System.out.println(result);
 		
 		
-		SportsDto dto = service.findByName("Chess");
+		//SportsDto dto = service.findByName("Chess");
 		
-		System.out.println(dto);
-
+		//System.out.println(dto);
+		
+	boolean result=service.updateTypeByName("Badminton","Outdoor");
+	System.out.println(result);
 	}
 
 }
