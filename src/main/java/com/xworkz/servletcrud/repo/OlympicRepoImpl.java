@@ -67,4 +67,22 @@ public class OlympicRepoImpl implements OlympicRepo {
 		return null;
 	}
 
+	@Override
+	public boolean updateTypeByName(String name, String type) {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction transaction =em.getTransaction();
+		transaction.begin();
+		Query query =em.createNamedQuery("updateTypeByName");
+		query.setParameter("ty",type);
+		query.setParameter("nm", name);
+		int rowsAffected =query.executeUpdate();
+		transaction.commit();
+
+		if(rowsAffected>0) {
+			System.out.println("query is updated");
+			return true;
+		}
+		return false;
+	}
+
 }

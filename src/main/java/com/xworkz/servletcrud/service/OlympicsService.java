@@ -10,5 +10,6 @@ public interface OlympicsService {
 	
 	public SportsDto findByName(String name);
 	
+	public boolean updateTypeByName(String name,String type);
 
 }

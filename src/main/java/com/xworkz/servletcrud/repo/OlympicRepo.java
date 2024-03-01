@@ -10,4 +10,5 @@ public interface OlympicRepo {
 
 	public SportsDto findByName(String name);
 
+	public boolean updateTypeByName(String name,String type);
 }

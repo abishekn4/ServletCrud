@@ -9,10 +9,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @Entity
 @Table(name = "sports")
 @NamedQuery(name = "findByName" , query = "Select dto from SportsDto dto where dto.sportName =:nm")
+@NamedQuery(name="updateTypeByName", query ="Update SportsDto dto set dto.sportType = :ty where dto.sportName = :nm")
 public class SportsDto {
 	
 	@Id
@@ -36,6 +37,56 @@ public class SportsDto {
 	
 	public SportsDto() {
 		System.out.println("Default Constructor of Sports Dto ");
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getSportName() {
+		return sportName;
+	}
+
+
+	public void setSportName(String sportName) {
+		this.sportName = sportName;
+	}
+
+
+	public int getNoOfPlayers() {
+		return noOfPlayers;
+	}
+
+
+	public void setNoOfPlayers(int noOfPlayers) {
+		this.noOfPlayers = noOfPlayers;
+	}
+
+
+	public String getSportType() {
+		return sportType;
+	}
+
+
+	public void setSportType(String sportType) {
+		this.sportType = sportType;
+	}
+
+
+	public String getEquipment() {
+		return equipment;
+	}
+
+
+	public void setEquipment(String equipment) {
+		this.equipment = equipment;
 	}
 	
 	

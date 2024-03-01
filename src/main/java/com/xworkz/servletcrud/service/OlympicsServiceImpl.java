@@ -40,5 +40,15 @@ public class OlympicsServiceImpl implements OlympicsService{
 		return null;
 	}
 
+	@Override
+	public boolean updateTypeByName(String name, String type) {
+		if(type!=null && !type.isEmpty()) {
+			if(name!= null && !name.isEmpty()) {
+				return repo.updateTypeByName(name, type);
+			}
+		}
+		return false;
+	}
+
 	
 }
